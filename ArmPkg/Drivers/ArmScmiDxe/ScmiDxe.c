@@ -86,9 +86,9 @@ ArmScmiDxeEntryPoint (
     return Status;
   }
 
-  // Accept any version between SCMI v1.0 and SCMI v2.0
+  // Accept any SCMI version v1.x or v2.x
   if ((Version < BASE_PROTOCOL_VERSION_V1) ||
-      (Version > BASE_PROTOCOL_VERSION_V2))
+      (Version >= BASE_PROTOCOL_VERSION_V3))
   {
     ASSERT (FALSE);
     return EFI_UNSUPPORTED;
